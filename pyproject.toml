@@ -1,0 +1,12 @@
+[project]
+name = "agent-confidence"
+version = "0.1.0"
+description = "Best practices and a reusable design skill for confidence grading in business agents"
+requires-python = ">=3.10"
+dependencies = [
+  "PyYAML>=6.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

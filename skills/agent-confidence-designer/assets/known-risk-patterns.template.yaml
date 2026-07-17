@@ -1,0 +1,19 @@
+schema_version: "1.0"
+risks:
+  - id: "replace-me-risk"
+    category: "calculation"
+    source: "development_test"
+    issue_reference: "TODO-001"
+    summary: "TODO: describe a confirmed development-test or user-self-test issue"
+    trigger_conditions:
+      - "TODO: define a reproducible trigger condition"
+    affected_result_units:
+      - "replace-me-result"
+    severity: "critical"
+    detectability: "deterministic"
+    validator_id: "replace-me-validator"
+    manual_gate: null
+    on_detected: "low"
+    on_unverified: "medium"
+    regression_tests:
+      - "tests/test_replace_me_risk.py"

@@ -1,0 +1,101 @@
+schema_version: "1.0"
+agent:
+  id: "excel-sales-report-agent"
+  name: "Excel 销售报表 Agent"
+  version: "1.0.0"
+  owner: "Sales Operations Engineering"
+  description: "合并销售明细、生成月度汇总，并将核心指标写入经营报告。"
+
+supported_scope:
+  inputs:
+    - "UTF-8 CSV 或 XLSX 销售明细，包含 record_id、sale_date、region、amount"
+  outputs:
+    - "清洗后的销售明细、月度汇总 Excel、经营报告指标"
+  assumptions:
+    - "金额币种统一为人民币"
+    - "隐藏行默认属于业务数据，除非输入清单明确排除"
+  exclusions:
+    - "加密工作簿"
+    - "无法确定币种或业务日期语义的文件"
+
+result_units:
+  - id: "normalized-sales-detail"
+    description: "标准化并合并后的销售明细"
+    location: "sales_detail_normalized.xlsx#明细"
+    criticality: "high"
+    acceptance_criteria:
+      - "所有声明输入文件均被处理"
+      - "业务记录数守恒且 record_id 唯一"
+      - "sale_date 全部可解析并归入正确月份"
+    dependencies: []
+    required_validators:
+      - "validate-input-file-completeness"
+      - "validate-record-count-conservation"
+      - "validate-date-normalization"
+    optional_validators: []
+    maximum_level_when_unverified: "medium"
+
+  - id: "monthly-sales-total"
+    description: "按月份汇总的销售总额"
+    location: "sales_summary.xlsx#月度汇总"
+    criticality: "critical"
+    acceptance_criteria:
+      - "月度总额与标准化明细独立复算一致"
+      - "每个汇总值都能追溯到明细记录"
+    dependencies:
+      - "normalized-sales-detail"
+    required_validators:
+      - "validate-detail-total-reconciliation"
+      - "validate-source-traceability"
+    optional_validators: []
+    maximum_level_when_unverified: "medium"
+
+  - id: "report-sales-metric"
+    description: "经营报告中引用的月度销售指标"
+    location: "management_report.docx#销售概览"
+    criticality: "high"
+    acceptance_criteria:
+      - "指标值、月份和币种与 Excel 月度汇总一致"
+    dependencies:
+      - "monthly-sales-total"
+    required_validators:
+      - "validate-cross-file-metric-consistency"
+    optional_validators: []
+    maximum_level_when_unverified: "medium"
+
+  - id: "output-file-integrity"
+    description: "生成文件的可打开性与基础结构"
+    location: "任务输出目录"
+    criticality: "low"
+    acceptance_criteria:
+      - "Excel 和 Word 输出文件可打开且包含约定对象"
+    dependencies: []
+    required_validators: []
+    optional_validators:
+      - "validate-output-file-integrity"
+    maximum_level_when_unverified: "medium"
+
+grading_policy:
+  high_requires:
+    - "all_required_validators_pass"
+    - "no_critical_risk_detected"
+    - "within_supported_scope"
+    - "evidence_traceable"
+  downgrade_rules:
+    - condition: "any_critical_validator_fail"
+      level: "low"
+      action: "block_or_mandatory_review"
+    - condition: "required_validator_unavailable"
+      level: "medium"
+      action: "targeted_review"
+    - condition: "outside_supported_scope"
+      level: "low"
+      action: "block_or_manual_gate"
+    - condition: "general_known_risk_detected"
+      level: "medium"
+      action: "targeted_review"
+  aggregation:
+    critical_result_low: "overall_low"
+    critical_result_medium: "overall_at_most_medium"
+    required_validation_incomplete: "overall_not_high"
+    use_numeric_average: false
