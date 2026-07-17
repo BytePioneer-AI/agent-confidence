@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Confidence Designer"
+  short_description: "为 Agent + Skill 设计并审查高/中/低可信等级方案"
+  default_prompt: "分析这个业务 Agent 的背景、输出和测试问题，生成或审查可信等级契约、风险模式、验证器规范和测试覆盖。"

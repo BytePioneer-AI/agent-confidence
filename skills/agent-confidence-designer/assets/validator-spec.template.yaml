@@ -1,0 +1,23 @@
+schema_version: "1.0"
+validators:
+  - id: "replace-me-validator"
+    name: "TODO: business validator name"
+    type: "deterministic"
+    implementation_status: "planned"
+    implementation: "validators/validate_replace_me.py"
+    applies_to:
+      - "replace-me-result"
+    inputs:
+      - "TODO: required source or intermediate artifact"
+    logic: "TODO: describe the fixed, repeatable validation logic"
+    pass_condition: "TODO: define an observable pass condition"
+    fail_effect: "low"
+    unavailable_effect: "medium"
+    evidence_fields:
+      - "target"
+      - "expected"
+      - "actual"
+      - "message"
+      - "review_action"
+    regression_tests:
+      - "tests/test_replace_me_risk.py"

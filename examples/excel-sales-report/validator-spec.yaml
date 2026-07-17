@@ -1,0 +1,117 @@
+schema_version: "1.0"
+validators:
+  - id: "validate-input-file-completeness"
+    name: "输入文件完整性检查"
+    type: "deterministic"
+    implementation_status: "verified"
+    implementation: "validators/validate_input_files.py"
+    applies_to:
+      - "normalized-sales-detail"
+    inputs:
+      - "expected_files"
+      - "processed_files"
+    logic: "比较声明的输入文件集合与成功处理文件集合。"
+    pass_condition: "集合完全一致。"
+    fail_effect: "low"
+    unavailable_effect: "medium"
+    evidence_fields: ["expected", "actual", "missing_files", "message"]
+    regression_tests: ["tests/test_excel_confidence_validators.py"]
+
+  - id: "validate-record-count-conservation"
+    name: "记录数守恒检查"
+    type: "deterministic"
+    implementation_status: "verified"
+    implementation: "validators/validate_record_count.py"
+    applies_to:
+      - "normalized-sales-detail"
+    inputs:
+      - "expected_business_record_count"
+      - "output_record_count"
+    logic: "比较应纳入业务记录数和输出记录数。"
+    pass_condition: "两者相等。"
+    fail_effect: "low"
+    unavailable_effect: "medium"
+    evidence_fields: ["expected", "actual", "difference", "message"]
+    regression_tests: ["tests/test_excel_confidence_validators.py"]
+
+  - id: "validate-date-normalization"
+    name: "日期标准化检查"
+    type: "deterministic"
+    implementation_status: "verified"
+    implementation: "validators/validate_date_normalization.py"
+    applies_to:
+      - "normalized-sales-detail"
+    inputs:
+      - "normalized_records"
+    logic: "检查每条业务记录是否具有可解析的标准日期。"
+    pass_condition: "所有记录均有非空 parsed_date。"
+    fail_effect: "low"
+    unavailable_effect: "medium"
+    evidence_fields: ["target", "invalid_record_ids", "message"]
+    regression_tests: ["tests/test_excel_confidence_validators.py"]
+
+  - id: "validate-detail-total-reconciliation"
+    name: "明细与月度汇总勾稽"
+    type: "deterministic"
+    implementation_status: "verified"
+    implementation: "validators/validate_detail_total.py"
+    applies_to:
+      - "monthly-sales-total"
+    inputs:
+      - "detail_amounts"
+      - "reported_total"
+    logic: "独立求和明细金额并与报告值比较。"
+    pass_condition: "差异绝对值不超过 0.01。"
+    fail_effect: "low"
+    unavailable_effect: "medium"
+    evidence_fields: ["expected", "actual", "difference", "message"]
+    regression_tests: ["tests/test_excel_confidence_validators.py"]
+
+  - id: "validate-source-traceability"
+    name: "指标来源追溯检查"
+    type: "deterministic"
+    implementation_status: "verified"
+    implementation: "validators/validate_source_traceability.py"
+    applies_to:
+      - "monthly-sales-total"
+    inputs:
+      - "source_record_ids"
+    logic: "检查汇总指标是否关联至少一条有效明细记录。"
+    pass_condition: "来源记录列表非空且不存在空 ID。"
+    fail_effect: "low"
+    unavailable_effect: "medium"
+    evidence_fields: ["source_record_ids", "message"]
+    regression_tests: ["tests/test_excel_confidence_validators.py"]
+
+  - id: "validate-cross-file-metric-consistency"
+    name: "跨文件指标一致性检查"
+    type: "deterministic"
+    implementation_status: "verified"
+    implementation: "validators/validate_cross_file_metric.py"
+    applies_to:
+      - "report-sales-metric"
+    inputs:
+      - "excel_metric"
+      - "report_metric"
+    logic: "比较值、期间和币种。"
+    pass_condition: "值、期间和币种全部一致。"
+    fail_effect: "low"
+    unavailable_effect: "medium"
+    evidence_fields: ["expected", "actual", "message", "review_action"]
+    regression_tests: ["tests/test_excel_confidence_validators.py"]
+
+  - id: "validate-output-file-integrity"
+    name: "输出文件完整性检查"
+    type: "deterministic"
+    implementation_status: "verified"
+    implementation: "validators/validate_output_file.py"
+    applies_to:
+      - "output-file-integrity"
+    inputs:
+      - "output_paths"
+    logic: "检查输出文件是否存在且非空。"
+    pass_condition: "所有约定文件存在且大小大于零。"
+    fail_effect: "medium"
+    unavailable_effect: "medium"
+    evidence_fields: ["missing_files", "empty_files", "message"]
+    regression_tests: ["tests/test_excel_confidence_validators.py"]
