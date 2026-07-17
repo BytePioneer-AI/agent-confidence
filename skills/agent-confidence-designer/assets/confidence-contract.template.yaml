@@ -1,55 +1,35 @@
-schema_version: "1.0"
+schema_version: "2.0"
 agent:
   id: "{{AGENT_ID}}"
   name: "{{AGENT_NAME}}"
   version: "0.1.0"
   owner: "TODO"
-  description: "TODO: describe the business goal and downstream use"
+  description: "TODO"
 
-supported_scope:
-  inputs:
-    - "TODO: supported input type and constraints"
-  outputs:
-    - "TODO: expected output"
-  assumptions:
-    - "TODO: business assumption"
-  exclusions:
-    - "TODO: unsupported input or scenario"
+business_context:
+  users: ["TODO"]
+  downstream_actions: ["TODO"]
+  business_stages: ["TODO"]
+  authoritative_sources: ["TODO"]
+  supported_scope: ["TODO"]
+  exclusions: ["TODO"]
 
 result_units:
   - id: "replace-me-result"
-    description: "TODO: define one independently reviewable result"
-    location: "TODO: field/cell/paragraph/decision step"
-    criticality: "critical"
-    acceptance_criteria:
-      - "TODO: define an observable business acceptance condition"
+    name: "TODO"
+    location: "TODO"
+    result_shape: "field"
+    business_stage: "TODO"
+    business_impact: "high"
     dependencies: []
-    required_validators:
-      - "replace-me-validator"
-    optional_validators: []
-    maximum_level_when_unverified: "medium"
-
-grading_policy:
-  high_requires:
-    - "all_required_validators_pass"
-    - "no_critical_risk_detected"
-    - "within_supported_scope"
-    - "evidence_traceable"
-  downgrade_rules:
-    - condition: "any_critical_validator_fail"
-      level: "low"
-      action: "block_or_mandatory_review"
-    - condition: "required_validator_unavailable"
-      level: "medium"
-      action: "targeted_review"
-    - condition: "outside_supported_scope"
-      level: "low"
-      action: "block_or_manual_gate"
-    - condition: "general_known_risk_detected"
-      level: "medium"
-      action: "targeted_review"
-  aggregation:
-    critical_result_low: "overall_low"
-    critical_result_medium: "overall_at_most_medium"
-    required_validation_incomplete: "overall_not_high"
-    use_numeric_average: false
+    confidence_meaning:
+      evaluates: "TODO"
+      high_proves: "TODO"
+      high_does_not_prove: "TODO"
+    high_conditions: ["TODO"]
+    medium_conditions: ["TODO"]
+    low_conditions: ["TODO"]
+    review_policy:
+      high: "TODO"
+      medium: "TODO"
+      low: "TODO"
