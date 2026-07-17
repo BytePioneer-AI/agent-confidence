@@ -1,99 +1,89 @@
 # Agent Confidence
 
-面向业务 Agent + Skill 的可信等级设计方法与开发辅助 Skill。
+面向业务 Agent + Skill 的可信等级设计最佳实践与通用设计 Skill。
 
-本仓库解决的问题不是“让大模型给自己的答案打一个分数”，而是帮助团队把开发测试和用户自测中已经发现的问题，沉淀成可执行、可审计的业务验证规则，并在运行时将结果标记为“高 / 中 / 低”可信等级。
+本项目帮助开发人员针对一个具体业务回答：
+
+- Agent 的产出应该拆成哪些可独立审查的结果；
+- 开发测试和用户自测中发现的问题，哪些应进入可信等级定义；
+- 每类结果在什么业务条件下属于高、中、低可信；
+- 相关判断逻辑适合融入现有 SQL、脚本、业务服务、API 还是工作流；
+- 用户最终只需要检查哪些高风险位置。
 
 ## 核心边界
 
-本项目把能力分为两层：
+本项目提供两类通用成果：
 
-1. **通用层**：最佳实践文档与 `agent-confidence-designer` Skill，负责统一方法、设计流程、输出契约和设计审查。
-2. **业务层**：针对具体业务编写的固定校验脚本，负责检查本次运行结果并产生验证证据。
+1. **最佳实践文档**：统一分析方法、术语、设计步骤和审查要点；
+2. **`agent-confidence-designer` Skill**：把方法应用到具体业务，生成或审查业务专属的可信等级设计。
 
-通用 Skill **不直接替代业务校验脚本，也不依赖执行任务的 Agent 自评置信度**。
+具体业务的可信判断逻辑不要求使用独立脚本，也不要求采用统一运行时协议。它可以直接融入已有的：
 
-```mermaid
-flowchart LR
-    A[开发测试 / 用户自测问题] --> B[风险模式与回归用例]
-    C[业务背景与验收标准] --> D[Agent Confidence Designer]
-    B --> D
-    D --> E[可信等级契约]
-    D --> F[验证器规范]
-    D --> G[业务脚本骨架与测试要求]
-    H[业务 Agent 运行结果] --> I[业务固定校验脚本]
-    E --> J[确定性等级聚合]
-    I --> J
-    J --> K[高 / 中 / 低 + 风险位置 + 核查动作]
+- SQL 或数据任务；
+- Python、Java、JavaScript 等业务代码；
+- 规则引擎；
+- 内部或外部 API；
+- Agent 工作流节点；
+- 人工审核流程。
+
+本项目不规定统一的 `PASS / FAIL / NOT_RUN` 状态，不提供通用置信度聚合器，也不假设所有业务都需要额外建设“验证器框架”。
+
+## 仓库结构
+
+```text
+agent-confidence/
+├── README.md
+├── docs/
+│   ├── agent-confidence-best-practices.md
+│   ├── implementation-guide.md
+│   └── research-conclusion.md
+├── skills/
+│   └── agent-confidence-designer/
+│       ├── SKILL.md
+│       ├── agents/openai.yaml
+│       ├── assets/
+│       └── references/
+└── examples/
+    ├── excel-sales-report/confidence-design.md
+    └── word-management-report/confidence-design.md
 ```
 
-## 仓库内容
+## 推荐使用方式
 
-- [`docs/agent-confidence-best-practices.md`](docs/agent-confidence-best-practices.md)：完整最佳实践。
-- [`docs/implementation-guide.md`](docs/implementation-guide.md)：业务开发落地指南。
-- [`docs/research-conclusion.md`](docs/research-conclusion.md)：调研结论与范围边界。
-- [`skills/agent-confidence-designer`](skills/agent-confidence-designer)：通用设计与审查 Skill。
-- [`examples`](examples)：Excel 与 Word 业务示例。
-- [`tests`](tests)：脚手架与设计校验脚本的自动化测试。
+向 Skill 提供：
 
-## 快速开始
+- 业务目标和下游用途；
+- Agent / Skill 的输入、处理流程和输出；
+- 业务验收标准；
+- 开发测试中发现的问题；
+- 用户自测或验收阶段确认的问题；
+- 当前代码、SQL、API 或工作流结构；
+- 已有的置信度设计（如有）。
 
-### 1. 为业务 Agent 创建可信等级设计包
+Skill 默认输出一份 `confidence-design.md`，包括：
 
-```bash
-python skills/agent-confidence-designer/scripts/scaffold_confidence_package.py \
-  --agent-id sales-report-agent \
-  --agent-name "销售报表 Agent" \
-  --output ./confidence-design
-```
+1. 业务背景与范围；
+2. 结果单元及关键性；
+3. 已知问题与风险映射；
+4. 各结果的高、中、低条件；
+5. 整体等级组合原则；
+6. 判断逻辑的建议实现位置；
+7. 定向人工审查策略；
+8. 待业务确认的问题。
 
-### 2. 根据业务与测试问题填写设计文件
+## 可信等级的通用语义
 
-生成的核心文件包括：
-
-- `confidence-contract.yaml`：结果单元、关键性、高中低规则和验证要求；
-- `known-risk-patterns.yaml`：开发测试与用户自测问题沉淀；
-- `validator-spec.yaml`：业务验证器的输入、逻辑、状态和等级影响；
-- `confidence-review-report.md`：设计审查结论和缺口。
-
-### 3. 检查设计完整性
-
-```bash
-python skills/agent-confidence-designer/scripts/validate_confidence_package.py \
-  ./confidence-design --strict
-
-python skills/agent-confidence-designer/scripts/check_issue_coverage.py \
-  ./confidence-design
-```
-
-这些脚本只检查“置信度设计是否完整、自洽和可执行”，不会代替具体业务校验逻辑。
-
-### 4. 运行测试
-
-```bash
-python -m pip install -r requirements.txt
-make test
-make validate-examples
-```
-
-## 可信等级语义
-
-| 等级 | 统一含义 | 默认动作 |
+| 等级 | 通用解释 | 默认用户动作 |
 |---|---|---|
-| 高 | 必要验证已完整执行并通过，未触发关键已知风险，证据可追溯且输入在支持范围内 | 可直接使用或少量抽查 |
-| 中 | 没有发现明确关键错误，但验证覆盖不足、存在边界场景或部分内容无法自动验证 | 定向人工检查 |
-| 低 | 关键检查失败、关键来源缺失、结果冲突、超出支持范围或触发严重已知缺陷 | 必须人工确认或阻断 |
+| 高 | 在该业务已经定义的条件下，可直接使用或仅做少量抽查 | 不做全文检查 |
+| 中 | 存在边界情况、依据不足或已知风险，需要检查指定结果 | 定向检查系统标记位置 |
+| 低 | 命中明确错误条件、严重已知风险或关键业务条件不满足 | 必须人工确认或阻断 |
 
-“未验证”不等于“验证通过”；关键结果缺少必要验证时，不能标记为高。
+各业务必须自行定义什么条件对应高、中、低；通用 Skill 不替业务负责人决定“什么是正确”。
 
-## 设计原则摘要
+## 示例
 
-- 历史测试问题决定“检查什么”，当前验证结果决定“本次是什么等级”。
-- 固定脚本和业务规则优先，大模型只辅助发现脚本难以覆盖的语义风险。
-- 高可信必须有正向证据，不能由“没有发现错误”推导。
-- 关键子结果失败不能被大量非关键高可信结果平均掉。
-- 每个等级都应能追溯到具体检查、证据、风险位置和建议动作。
+- [`examples/excel-sales-report/confidence-design.md`](examples/excel-sales-report/confidence-design.md)：销售数据合并、汇总与报告场景；
+- [`examples/word-management-report/confidence-design.md`](examples/word-management-report/confidence-design.md)：经营分析 Word 报告场景。
 
-## 当前状态
-
-这是可用于内部试点的首版。建议先选择一个 Excel 数据处理 Agent 和一个 Word 报告 Agent，使用真实开发测试问题验证方法，再迭代风险分类、模板和设计检查规则。
+两个示例只展示分析和设计方式，不代表真实业务可以直接照搬。
