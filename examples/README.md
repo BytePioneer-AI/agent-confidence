@@ -1,9 +1,8 @@
-# 实际业务案例
+# 示例
 
-本目录包含三个经过脱敏的真实业务案例，用于展示同一套设计方法怎样适配不同业务。
+本目录展示如何针对不同业务编写可信等级设计，而不是提供可直接复制的运行时框架。
 
-- [`pba-so-contract-agent`](pba-so-contract-agent)：SO Excel 到合同管理模板的转换；
-- [`ecs-uat-automation-agent`](ecs-uat-automation-agent)：从逻辑核查规则生成 UAT clean/dirty 测试数据；
-- [`supplier-questionnaire-integration`](supplier-questionnaire-integration)：从历史问卷复用答案并整合责任部门终版。
+- `excel-sales-report/confidence-design.md`：结构化数据、Excel 汇总和跨文件数字一致性；
+- `word-management-report/confidence-design.md`：Word 报告、事实指标、原因分析和行动建议。
 
-案例只保留业务结构、可信判断逻辑和实施提示，不包含私有仓库代码、真实客户问卷、内部文件路径或可识别个人和企业的敏感数据。
+真实业务需要根据自己的输入、口径、历史问题、代码结构和下游风险重新设计。
