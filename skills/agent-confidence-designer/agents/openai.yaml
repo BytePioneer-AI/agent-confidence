@@ -1,4 +1,0 @@
-interface:
-  display_name: "Agent Confidence Designer"
-  short_description: "为具体 Agent + Skill 分析并设计高、中、低可信等级"
-  default_prompt: "分析这个业务 Agent 的背景、结果结构、测试问题和现有实现，生成或审查一份业务专属的高、中、低可信等级设计，并说明如何融入现有 SQL、代码、API 或工作流。"
