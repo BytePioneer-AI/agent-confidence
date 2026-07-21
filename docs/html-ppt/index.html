@@ -1102,6 +1102,274 @@ body, .h1, .h2, h1, h2, .eyebrow, .kicker { letter-spacing: 0; }
   color: var(--text-1);
 }
 
+/* Slide 07 · levels: meaning flows directly into the user action */
+.levels-v2-lede {
+  max-width: none;
+  margin: 0;
+  color: var(--text-2);
+  font-size: 18px;
+  line-height: 1.5;
+}
+.levels-v2-lede strong { color: var(--text-1); }
+.levels-v2-stack {
+  margin-top: 20px;
+  border-top: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--border-strong);
+  background: rgba(255,255,255,.7);
+}
+.levels-v2-row {
+  display: grid;
+  grid-template-columns: 150px 1.35fr 70px 1fr;
+  align-items: center;
+  min-height: 112px;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+}
+.levels-v2-row:last-child { border-bottom: 0; }
+.levels-v2-row.high { background: color-mix(in srgb, var(--high-bg) 58%, #fff); }
+.levels-v2-row.mid { background: color-mix(in srgb, var(--mid-bg) 56%, #fff); }
+.levels-v2-row.low { background: color-mix(in srgb, var(--low-bg) 58%, #fff); }
+.levels-v2-level {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+.levels-v2-level .cn {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 21px;
+  font-weight: 850;
+}
+.levels-v2-row.high .cn { color: var(--high); border: 1px solid var(--high-border); }
+.levels-v2-row.mid .cn { color: var(--mid); border: 1px solid var(--mid-border); }
+.levels-v2-row.low .cn { color: var(--low); border: 1px solid var(--low-border); }
+.levels-v2-level .en {
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.levels-v2-meaning,
+.levels-v2-action { padding: 0 18px; }
+.levels-v2-meaning span,
+.levels-v2-action span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.levels-v2-meaning strong,
+.levels-v2-action strong {
+  display: block;
+  color: var(--text-1);
+  font-size: 18px;
+  line-height: 1.4;
+}
+.levels-v2-action strong { font-size: 22px; }
+.levels-v2-action p {
+  margin: 4px 0 0;
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1.4;
+}
+.levels-v2-row.high .levels-v2-action strong { color: var(--high); }
+.levels-v2-row.mid .levels-v2-action strong { color: var(--mid); }
+.levels-v2-row.low .levels-v2-action strong { color: var(--low); }
+.levels-v2-arrow {
+  display: grid;
+  place-items: center;
+  color: var(--text-3);
+  font-size: 25px;
+  font-weight: 800;
+}
+.levels-v2-boundaries {
+  display: grid;
+  grid-template-columns: 150px repeat(3, 1fr);
+  gap: 18px;
+  align-items: center;
+  margin-top: 20px;
+  padding: 14px 18px;
+  border-left: 5px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 5%, #fff);
+}
+.levels-v2-boundaries h3 {
+  margin: 0;
+  color: var(--accent);
+  font-size: 19px;
+}
+.levels-v2-boundaries p {
+  margin: 0;
+  padding-left: 18px;
+  border-left: 1px solid var(--border);
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1.4;
+}
+.levels-v2-boundaries p strong {
+  display: block;
+  color: var(--text-1);
+  font-size: 15px;
+}
+
+/* Slide 08 · business impact: keep confidence and consequence independent */
+.impact-v2-lede {
+  max-width: none;
+  margin: 0;
+  color: var(--text-2);
+  font-size: 18px;
+  line-height: 1.5;
+}
+.impact-v2-lede strong { color: var(--text-1); }
+.impact-v2-dimensions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 18px;
+  border-top: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--border-strong);
+  background: rgba(255,255,255,.72);
+}
+.impact-v2-dimension {
+  padding: 20px 30px 18px;
+}
+.impact-v2-dimension + .impact-v2-dimension {
+  border-left: 1px solid var(--border-strong);
+}
+.impact-v2-dimension-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+}
+.impact-v2-dimension-head span {
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.impact-v2-dimension-head em {
+  color: var(--accent-2);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 750;
+}
+.impact-v2-dimension h3 {
+  margin: 7px 0 3px;
+  color: var(--text-1);
+  font-size: 24px;
+}
+.impact-v2-dimension > p {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 15px;
+  line-height: 1.4;
+}
+.impact-v2-scale {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 14px;
+}
+.impact-v2-scale div {
+  padding-top: 9px;
+  border-top: 2px solid var(--border-strong);
+  color: var(--text-2);
+  font-size: 13px;
+  line-height: 1.35;
+}
+.impact-v2-scale div:nth-child(1) { border-top-color: var(--high); }
+.impact-v2-scale div:nth-child(2) { border-top-color: var(--mid); }
+.impact-v2-scale div:nth-child(3) { border-top-color: var(--low); }
+.impact-v2-scale strong {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--text-1);
+  font-size: 15px;
+}
+.impact-v2-example {
+  margin-top: 20px;
+}
+.impact-v2-example h3 {
+  margin: 0 0 10px;
+  color: var(--text-1);
+  font-size: 20px;
+}
+.impact-v2-example-grid {
+  display: grid;
+  grid-template-columns: 1.05fr .55fr 1.15fr 1.35fr;
+  border-top: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--border-strong);
+  background: rgba(255,255,255,.78);
+}
+.impact-v2-example-grid > div {
+  min-height: 54px;
+  padding: 12px 16px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+}
+.impact-v2-example-grid > div:nth-child(4n) { border-right: 0; }
+.impact-v2-example-grid > div:nth-last-child(-n+4) { border-bottom: 0; }
+.impact-v2-example-grid .head {
+  min-height: 38px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  background: color-mix(in srgb, var(--accent) 5%, #fff);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.impact-v2-example-grid .result {
+  color: var(--text-1);
+  font-weight: 750;
+}
+.impact-v2-example-grid .review-critical {
+  color: var(--low);
+  font-weight: 750;
+}
+.impact-v2-example-grid .review-general {
+  color: var(--high);
+  font-weight: 750;
+}
+.impact-v2-conclusion {
+  display: grid;
+  grid-template-columns: 1.18fr .82fr;
+  gap: 30px;
+  align-items: center;
+  margin-top: 18px;
+  padding: 14px 18px;
+  border-left: 5px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 5%, #fff);
+}
+.impact-v2-conclusion strong {
+  color: var(--text-1);
+  font-size: 17px;
+}
+.impact-v2-conclusion p {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
 .agenda-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1174,6 +1442,288 @@ body, .h1, .h2, h1, h2, .eyebrow, .kicker { letter-spacing: 0; }
   color: var(--text-1);
 }
 .scenario .code .op { color: var(--accent); font-weight: 700; }
+
+/* Slide 10 · one complete business case instead of three shallow examples */
+.case-v2-lede {
+  max-width: none;
+  margin: 0;
+  color: var(--text-2);
+  font-size: 18px;
+  line-height: 1.5;
+}
+.case-v2-lede strong { color: var(--text-1); }
+.case-v2-layout {
+  display: grid;
+  grid-template-columns: .88fr 1.12fr;
+  gap: 22px;
+  margin-top: 18px;
+}
+.case-v2-trace,
+.case-v2-levels {
+  border-top: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--border-strong);
+  background: rgba(255,255,255,.74);
+}
+.case-v2-section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px 10px;
+  border-bottom: 1px solid var(--border);
+}
+.case-v2-section-head span {
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.case-v2-section-head strong {
+  color: var(--text-1);
+  font-size: 19px;
+}
+.case-v2-trace-item {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 16px;
+  align-items: center;
+  min-height: 82px;
+  margin: 0 18px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.case-v2-trace-item:last-child { border-bottom: 0; }
+.case-v2-trace-item .role {
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.case-v2-trace-item strong {
+  display: block;
+  color: var(--text-1);
+  font-size: 17px;
+  line-height: 1.35;
+}
+.case-v2-trace-item p {
+  margin: 3px 0 0;
+  color: var(--text-2);
+  font-size: 13px;
+  line-height: 1.4;
+}
+.case-v2-trace-item.formation { border-left: 4px solid var(--accent-2); padding-left: 14px; }
+.case-v2-trace-item.result {
+  margin: 10px 18px 12px;
+  padding: 14px 16px;
+  border: 0;
+  border-radius: 9px;
+  background: linear-gradient(145deg, #272562, #403e82);
+}
+.case-v2-trace-item.result .role,
+.case-v2-trace-item.result p { color: rgba(255,255,255,.7); }
+.case-v2-trace-item.result strong { color: #fff; font-size: 19px; }
+.case-v2-level-row {
+  display: grid;
+  grid-template-columns: 52px 1fr 156px;
+  gap: 14px;
+  align-items: center;
+  min-height: 88px;
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--border);
+}
+.case-v2-level-row:last-child { border-bottom: 0; }
+.case-v2-level-row.high { background: color-mix(in srgb, var(--high-bg) 50%, #fff); }
+.case-v2-level-row.mid { background: color-mix(in srgb, var(--mid-bg) 50%, #fff); }
+.case-v2-level-row.low { background: color-mix(in srgb, var(--low-bg) 52%, #fff); }
+.case-v2-level-row .level {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 19px;
+  font-weight: 850;
+}
+.case-v2-level-row.high .level { color: var(--high); border: 1px solid var(--high-border); }
+.case-v2-level-row.mid .level { color: var(--mid); border: 1px solid var(--mid-border); }
+.case-v2-level-row.low .level { color: var(--low); border: 1px solid var(--low-border); }
+.case-v2-level-row .condition {
+  color: var(--text-1);
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 650;
+}
+.case-v2-level-row .action {
+  padding-left: 14px;
+  border-left: 1px solid var(--border);
+  color: var(--text-2);
+  font-size: 13px;
+  line-height: 1.4;
+}
+.case-v2-level-row .action strong {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 16px;
+}
+.case-v2-level-row.high .action strong { color: var(--high); }
+.case-v2-level-row.mid .action strong { color: var(--mid); }
+.case-v2-level-row.low .action strong { color: var(--low); }
+.case-v2-boundary {
+  display: grid;
+  grid-template-columns: 150px repeat(4, 1fr);
+  gap: 16px;
+  align-items: center;
+  margin-top: 18px;
+  padding: 13px 18px;
+  border-left: 5px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 5%, #fff);
+}
+.case-v2-boundary h3 {
+  margin: 0;
+  color: var(--accent);
+  font-size: 19px;
+}
+.case-v2-boundary span {
+  padding-left: 16px;
+  border-left: 1px solid var(--border);
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+/* Slide 10 · preserve the three original scenarios, improve only presentation */
+.scenarios-v2-lede {
+  max-width: none;
+  margin: 0;
+  color: var(--text-2);
+  font-size: 18px;
+  line-height: 1.5;
+}
+.scenarios-v2-lede strong { color: var(--text-1); }
+.scenarios-v2-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 18px;
+  border-top: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--border-strong);
+  background: rgba(255,255,255,.74);
+}
+.scenarios-v2-item {
+  min-height: 360px;
+  padding: 20px 24px 18px;
+  border-right: 1px solid var(--border-strong);
+  display: flex;
+  flex-direction: column;
+}
+.scenarios-v2-item:last-child { border-right: 0; }
+.scenarios-v2-item:nth-child(2) { background: color-mix(in srgb, var(--accent) 3%, #fff); }
+.scenarios-v2-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+}
+.scenarios-v2-head span {
+  color: var(--accent-2);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.scenarios-v2-head strong {
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+.scenarios-v2-item h3 {
+  margin: 12px 0 7px;
+  color: var(--text-1);
+  font-size: 22px;
+  line-height: 1.3;
+}
+.scenarios-v2-item > p {
+  margin: 0;
+  min-height: 62px;
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.scenarios-v2-flow {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.scenarios-v2-stage-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 5px;
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+.scenarios-v2-stage-label:first-child { margin-top: 0; }
+.scenarios-v2-stage-label b {
+  color: var(--accent-2);
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+.scenarios-v2-flow .source,
+.scenarios-v2-flow .result {
+  padding: 11px 13px;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text-1);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.scenarios-v2-flow .source { border: 1px solid var(--border); }
+.scenarios-v2-flow .relation {
+  padding: 9px 13px;
+  border-left: 3px solid var(--accent-2);
+  background: color-mix(in srgb, var(--accent-2) 5%, #fff);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.scenarios-v2-flow .result {
+  background: linear-gradient(145deg, #272562, #403e82);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(39,37,98,.12);
+}
+.scenarios-v2-common {
+  display: grid;
+  grid-template-columns: 165px 1fr;
+  gap: 20px;
+  align-items: center;
+  margin-top: 18px;
+  padding: 14px 18px;
+  border-left: 5px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 5%, #fff);
+}
+.scenarios-v2-common h3 {
+  margin: 0;
+  color: var(--accent);
+  font-size: 19px;
+}
+.scenarios-v2-common p {
+  margin: 0;
+  padding-left: 20px;
+  border-left: 1px solid var(--border);
+  color: var(--text-2);
+  font-size: 15px;
+  line-height: 1.45;
+}
+.scenarios-v2-common strong { color: var(--text-1); }
 
 .landing-path {
   position: relative;
@@ -1676,7 +2226,7 @@ body, .h1, .h2, h1, h2, .eyebrow, .kicker { letter-spacing: 0; }
         <div class="cover-v2-payoff">少审 · 审准 · 控风险</div>
       </div>
     </div>
-    <div class="deck-footer"><span>让 Agent 结果可分流使用、可定点验证、可前置控险</span><span class="slide-number" data-current="1" data-total="13"></span></div>
+    <div class="deck-footer"><span>让 Agent 结果可分流使用、可定点验证、可前置控险</span><span class="slide-number" data-current="1" data-total="12"></span></div>
     <div class="notes">封面。核心主张：从整份输出全面复核，转向只审真正需要审查的结果。</div>
   </section>
 
@@ -1692,9 +2242,9 @@ body, .h1, .h2, h1, h2, .eyebrow, .kicker { letter-spacing: 0; }
       <div class="agenda-item"><div class="num">04</div><div><strong>结果溯源链</strong><span>可追溯，但不评级</span></div></div>
       <div class="agenda-item"><div class="num">05</div><div><strong>高 / 中 / 低</strong><span>业务条件 + 默认动作</span></div></div>
       <div class="agenda-item"><div class="num">06</div><div><strong>设计与场景</strong><span>流程 · 问卷 / Word / 汇总</span></div></div>
-      <div class="agenda-item"><div class="num">07</div><div><strong>检查与落地细节</strong><span>中低检查 · 反馈管理 · 反模式</span></div></div>
+      <div class="agenda-item"><div class="num">07</div><div><strong>检查与落地细节</strong><span>中低检查 · 反馈管理</span></div></div>
     </div>
-    <div class="deck-footer"><span>Internal Method Deck</span><span class="slide-number" data-current="2" data-total="13"></span></div>
+    <div class="deck-footer"><span>Internal Method Deck</span><span class="slide-number" data-current="2" data-total="12"></span></div>
   </section>
 
   <!-- 03 Why -->
@@ -1737,7 +2287,7 @@ body, .h1, .h2, h1, h2, .eyebrow, .kicker { letter-spacing: 0; }
       <div class="confidence-why-value"><strong>控风险</strong><span>为自动流转和人工介入建立明确边界</span></div>
     </div>
     <div class="confidence-why-conclusion"><strong>核心价值：</strong>置信度不是证明 Agent 永远正确，而是让业务在结果可靠程度混合的现实下，仍然能够安全、高效地使用 Agent。</div>
-    <div class="deck-footer"><span>生成只是起点 · 低成本验收才能真正进入业务</span><span class="slide-number" data-current="3" data-total="13"></span></div>
+    <div class="deck-footer"><span>生成只是起点 · 低成本验收才能真正进入业务</span><span class="slide-number" data-current="3" data-total="12"></span></div>
   </section>
 
   <!-- 04 Landing path -->
@@ -1752,7 +2302,7 @@ body, .h1, .h2, h1, h2, .eyebrow, .kicker { letter-spacing: 0; }
       <div class="path-node"><div class="path-dot">03</div><h3>业务校准</h3><p>写出高、中、低事实条件与检查动作</p></div>
       <div class="path-node"><div class="path-dot">04</div><h3>嵌入Agent</h3><p>把规则放到最容易取得准确数据的环节</p></div>
     </div>
-    <div class="deck-footer"><span>不另建统一置信度平台 / 服务 · 嵌入现有环节即可落地</span><span class="slide-number" data-current="4" data-total="13"></span></div>
+    <div class="deck-footer"><span>不另建统一置信度平台 / 服务 · 嵌入现有环节即可落地</span><span class="slide-number" data-current="4" data-total="12"></span></div>
   </section>
 
   <!-- 05 Result unit -->
@@ -1807,7 +2357,7 @@ body, .h1, .h2, h1, h2, .eyebrow, .kicker { letter-spacing: 0; }
       <p><strong>只能整体确认 → 不拆</strong>保持为一个结果单元</p>
       <p><strong>单元数量只看验收方式</strong>不看来源多少，也不看处理步骤多少</p>
     </div>
-    <div class="deck-footer"><span>只有同时满足“业务输出 + 可独立验收”，才是结果单元</span><span class="slide-number" data-current="5" data-total="13"></span></div>
+    <div class="deck-footer"><span>只有同时满足“业务输出 + 可独立验收”，才是结果单元</span><span class="slide-number" data-current="5" data-total="12"></span></div>
   </section>
 
   <!-- 06 Provenance -->
@@ -1861,89 +2411,107 @@ body, .h1, .h2, h1, h2, .eyebrow, .kicker { letter-spacing: 0; }
       <p><strong>来源与中间节点</strong><br>不单独定义高 / 中 / 低</p>
       <p><strong>模型思维过程</strong><br>不能作为溯源证据</p>
     </div>
-    <div class="deck-footer"><span>用户审查的始终是业务结果 · 溯源链帮助直接找到核对材料</span><span class="slide-number" data-current="6" data-total="13"></span></div>
+    <div class="deck-footer"><span>用户审查的始终是业务结果 · 溯源链帮助直接找到核对材料</span><span class="slide-number" data-current="6" data-total="12"></span></div>
   </section>
 
   <!-- 07 Levels -->
   <section class="slide report-slide tight" data-title="高中低">
     <div class="deck-header"><span>05 · Levels</span><span>高 / 中 / 低</span></div>
     <p class="kicker">Levels</p>
-    <h2 class="h2">统一语义，具体条件由业务定义</h2>
-    <div class="matrix anim-fade-up" data-anim="fade-up">
-      <div class="head">等级</div><div class="head">通用语义</div><div class="head">默认用户动作</div>
-      <div class="row-title"><span class="badge high">高</span></div>
-      <div><strong style="color:var(--text-1)">满足该业务定义的直接使用条件</strong></div>
-      <div>无需因置信度专门检查，或按策略少量抽查</div>
-      <div class="row-title"><span class="badge mid">中</span></div>
-      <div><strong style="color:var(--text-1)">未确认存在错误，但有明确不确定点或边界条件</strong></div>
-      <div>只检查该结果及已定位的溯源信息</div>
-      <div class="row-title"><span class="badge low">低</span></div>
-      <div><strong style="color:var(--text-1)">已发现错误，或命中不可接受的重大风险</strong></div>
-      <div>人工确认、修正或阻断后续使用</div>
+    <h2 class="h2">高、中、低对应三种不同的处理方式</h2>
+    <p class="levels-v2-lede">等级含义保持一致；<strong>什么条件算高、中或低</strong>，由具体业务用可检查的事实定义。</p>
+
+    <div class="levels-v2-stack anim-fade-up" data-anim="fade-up">
+      <div class="levels-v2-row high">
+        <div class="levels-v2-level"><span class="cn">高</span><span class="en">High</span></div>
+        <div class="levels-v2-meaning"><span>代表什么</span><strong>满足该业务定义的直接使用条件</strong></div>
+        <div class="levels-v2-arrow">→</div>
+        <div class="levels-v2-action"><span>用户动作</span><strong>直接使用</strong><p>无需因置信度专门检查，或按策略抽查</p></div>
+      </div>
+      <div class="levels-v2-row mid">
+        <div class="levels-v2-level"><span class="cn">中</span><span class="en">Medium</span></div>
+        <div class="levels-v2-meaning"><span>代表什么</span><strong>尚未确认错误，但存在明确的不确定点或边界条件</strong></div>
+        <div class="levels-v2-arrow">→</div>
+        <div class="levels-v2-action"><span>用户动作</span><strong>定点核查</strong><p>只检查该结果和已定位的来源</p></div>
+      </div>
+      <div class="levels-v2-row low">
+        <div class="levels-v2-level"><span class="cn">低</span><span class="en">Low</span></div>
+        <div class="levels-v2-meaning"><span>代表什么</span><strong>已发现错误，或命中业务不可接受的重大风险</strong></div>
+        <div class="levels-v2-arrow">→</div>
+        <div class="levels-v2-action"><span>用户动作</span><strong>确认、修正或阻断</strong><p>处理完成后才能继续使用</p></div>
+      </div>
     </div>
-    <div class="grid g3 mt-l">
-      <div class="card card-outline"><h4>条件必须可检查</h4><p>只用用户或程序能核对的事实：实际来源、主体、年份、计算规则等。不写抽象分数。</p></div>
-      <div class="card card-outline"><h4>「模型生成」不是等级</h4><p>它只是形成方式。模型生成的结果仍可分别属于高、中或低。</p></div>
-      <div class="card card-outline"><h4>高可信 ≠ 永不复核</h4><p>关键结果仍可因业务影响或既有控制制度要求额外复核。</p></div>
+
+    <div class="levels-v2-boundaries">
+      <h3>三个判断边界</h3>
+      <p><strong>条件必须可核对</strong>用来源、主体、年份、计算规则等事实，不写抽象分数</p>
+      <p><strong>“模型生成”不是等级</strong>它只是形成方式，结果仍可以是高、中或低</p>
+      <p><strong>高不等于永不复核</strong>关键结果仍可按业务影响或控制制度额外复核</p>
     </div>
-    <div class="deck-footer"><span>示例：问卷答案 · 高=来源一致可用 · 中=需确认年份/主体 · 低=冲突或错引</span><span class="slide-number" data-current="7" data-total="13"></span></div>
+    <div class="deck-footer"><span>示例：问卷答案 · 高=来源一致可用 · 中=需确认年份/主体 · 低=冲突或错引</span><span class="slide-number" data-current="7" data-total="12"></span></div>
   </section>
 
   <!-- 08 Impact -->
   <section class="slide report-slide tight" data-title="业务影响">
     <div class="deck-header"><span>06 · Business Impact</span><span>业务影响（可选）</span></div>
     <p class="kicker">Optional Dimension</p>
-    <h2 class="h2">置信度回答“要不要审”；业务影响回答“错了会怎样”</h2>
-    <div class="grid g2 mt-m">
-      <div>
-        <div class="grid g2" style="margin-bottom:14px">
-          <div class="card" style="background:color-mix(in srgb,var(--accent) 6%,#fff)"><h4>置信度</h4><p><strong style="color:var(--text-1)">用户是否需要审查这个结果</strong><br>高 / 中 / 低驱动默认审查动作</p></div>
-          <div class="card card-outline"><h4>业务影响</h4><p><strong style="color:var(--text-1)">如果结果错误，会造成什么后果</strong><br>影响审查优先级与强度，不改变等级</p></div>
-        </div>
-        <div class="card card-outline">
-          <h4>何时使用</h4>
-          <ul>
-            <li>不同结果出错后果明显不同</li>
-            <li>业务需要区分优先 / 重点审查对象</li>
-            <li>已有正式风险 / 严重度分类时可直接复用</li>
-          </ul>
-          <p class="dim" style="margin-top:10px;font-size:14px">不需要时可以完全不定义；优先写具体后果，避免再造一套易混淆的通用分级。</p>
+    <h2 class="h2">业务影响（可选）</h2>
+    <p class="impact-v2-lede">置信度等级 和 业务影响 是两个<strong>彼此独立</strong>的维度：错误后果再严重，也不会改变结果本身的置信度等级。</p>
+
+    <div class="impact-v2-dimensions anim-fade-up" data-anim="fade-up">
+      <div class="impact-v2-dimension">
+        <div class="impact-v2-dimension-head"><span>Dimension 01</span><em>必须</em></div>
+        <h3>置信度：这个结果需要检查吗？</h3>
+        <p>根据结果可靠程度，给出默认处理动作。</p>
+        <div class="impact-v2-scale">
+          <div><strong>高</strong>直接使用</div>
+          <div><strong>中</strong>定点核查</div>
+          <div><strong>低</strong>修正或阻断</div>
         </div>
       </div>
-      <div>
-        <div class="matrix" style="grid-template-columns:.9fr .5fr 1.4fr;margin-top:0">
-          <div class="head">结果</div><div class="head">置信度</div><div class="head">影响与审查</div>
-          <div class="row-title">合同付款金额</div><div><span class="badge high">高</span></div><div>可能重大财务损失 → 仍按财务控制仔细复核</div>
-          <div class="row-title">一般说明字段</div><div><span class="badge mid">中</span></div><div>局部文字修改 → 快速核对标记内容及来源</div>
-        </div>
-        <div class="card card-outline mt-m">
-          <h4>示例影响（非强制）</h4>
-          <p style="margin:0;line-height:1.6">关键：财务 / 法律 / 合规 / 决策后果 → 即使高可信也可强制复核<br>
-          重要：影响主要业务或下游动作 → 优先处理需审查项<br>
-          一般：局部内容 → 按置信度常规审查</p>
+      <div class="impact-v2-dimension">
+        <div class="impact-v2-dimension-head"><span>Dimension 02</span><em>可选</em></div>
+        <h3>业务影响：如果结果错了，后果有多严重？</h3>
+        <p>根据错误后果，调整审查优先级和强度。</p>
+        <div class="impact-v2-scale">
+          <div><strong>一般</strong>按默认动作</div>
+          <div><strong>重要</strong>优先处理</div>
+          <div><strong>关键</strong>可强制复核</div>
         </div>
       </div>
     </div>
-    <div class="deck-footer"><span>两个维度正交 · 影响不改等级，只改审查强度</span><span class="slide-number" data-current="8" data-total="13"></span></div>
+
+    <div class="impact-v2-example">
+      <h3>同为高置信度，错误后果不同，审查强度也不同</h3>
+      <div class="impact-v2-example-grid">
+        <div class="head">结果</div><div class="head">置信度</div><div class="head">错误后果</div><div class="head">最终审查方式</div>
+        <div class="result">合同付款金额</div><div><span class="badge high">高</span></div><div>可能造成重大财务损失</div><div class="review-critical">仍按财务控制要求仔细复核</div>
+        <div class="result">一般说明字段</div><div><span class="badge high">高</span></div><div>只影响局部文字</div><div class="review-general">直接使用，或按策略抽查</div>
+      </div>
+    </div>
+
+    <div class="impact-v2-conclusion">
+      <strong>关键结论：业务影响不改变置信度，只改变审查优先级和强度。</strong>
+      <p><strong>何时需要定义？</strong><br>不同结果的错误后果明显不同，且业务需要区分审查优先级时。否则可以不定义。</p>
+    </div>
+    <div class="deck-footer"><span>业务影响不改置信度 · 只调整审查优先级和强度</span><span class="slide-number" data-current="8" data-total="12"></span></div>
   </section>
 
   <!-- 09 Process -->
   <section class="slide report-slide tight" data-title="设计流程">
     <div class="deck-header"><span>07 · Design Flow</span><span>推荐设计流程</span></div>
     <p class="kicker">Design Flow</p>
-    <h2 class="h2">八步：从业务背景到可执行判断</h2>
+    <h2 class="h2">六步：从业务背景到可执行判断</h2>
     <div class="step-grid anim-stagger-list" data-anim-target>
       <div class="step"><div class="sn">1</div><div><strong>建立业务背景</strong><span>目标、使用者、输入输出、验收标准、支持范围、错误影响</span></div></div>
-      <div class="step"><div class="sn">2</div><div><strong>列出候选结果单元</strong><span>含义、定位方式、用户确认单位、验收标准、可选影响</span></div></div>
-      <div class="step"><div class="sn">3</div><div><strong>了解实际如何形成</strong><span>仅已有实现：结果写哪、用了哪些来源、发生了什么关系</span></div></div>
-      <div class="step"><div class="sn">4</div><div><strong>确认最终结果单元</strong><span>校验是否真生成、能否独立验收、有无错拆/错合</span></div></div>
-      <div class="step"><div class="sn">5</div><div><strong>明确必须保留的溯源</strong><span>来源精度、形成关系、查看路径；另列当前缺项</span></div></div>
-      <div class="step"><div class="sn">6</div><div><strong>定义高 / 中 / 低条件</strong><span>直接写业务条件；缺事实要写清缺什么</span></div></div>
-      <div class="step"><div class="sn">7</div><div><strong>说明中低怎么检查</strong><span>查哪个结果、看哪些来源、核什么、查完如何处理</span></div></div>
-      <div class="step"><div class="sn">8</div><div><strong>指定判断环节</strong><span>SQL / 脚本 / API / 规则 / 人工节点——最易拿到准数据的环节</span></div></div>
+      <div class="step"><div class="sn">2</div><div><strong>确认最终结果单元</strong><span>校验是否真生成、能否独立验收、有无错拆/错合</span></div></div>
+      <div class="step"><div class="sn">3</div><div><strong>明确必须保留的溯源</strong><span>来源精度、形成关系、查看路径；另列当前缺项</span></div></div>
+      <div class="step"><div class="sn">4</div><div><strong>定义高 / 中 / 低条件</strong><span>直接写业务条件；缺事实要写清缺什么</span></div></div>
+      <div class="step"><div class="sn">5</div><div><strong>说明中低怎么检查</strong><span>查哪个结果、看哪些来源、核什么、查完如何处理</span></div></div>
+      <div class="step"><div class="sn">6</div><div><strong>指定判断环节</strong><span>SQL / 脚本 / API / 规则 / 人工节点——最易拿到准数据的环节</span></div></div>
     </div>
     <div class="callout"><strong>实施原则：</strong>大模型可辅助语义一致、冲突发现、来源是否充分；<strong>不能通过评价自己的回答来认证结果正确</strong>。设计与改代码是两个动作，未经授权不默认改运行时。</div>
-    <div class="deck-footer"><span>无实现时跳过第 3 步现状分析 · 不猜测、不代替业务设计流程</span><span class="slide-number" data-current="9" data-total="13"></span></div>
+    <div class="deck-footer"><span>不猜测、不代替业务设计流程</span><span class="slide-number" data-current="9" data-total="12"></span></div>
   </section>
 
   <!-- 10 Scenarios -->
@@ -1951,28 +2519,56 @@ body, .h1, .h2, h1, h2, .eyebrow, .kicker { letter-spacing: 0; }
     <div class="deck-header"><span>08 · Scenarios</span><span>典型场景</span></div>
     <p class="kicker">Scenarios</p>
     <h2 class="h2">三种常见形态，同一套模型</h2>
-    <div class="scenario-grid anim-stagger-list" data-anim-target>
-      <div class="scenario">
-        <div class="label">01 · 供应商问卷</div>
+
+    <div class="scenarios-v2-grid anim-fade-up" data-anim="fade-up">
+      <div class="scenarios-v2-item">
+        <div class="scenarios-v2-head"><span>01 · 供应商问卷</span><strong>QUESTIONNAIRE</strong></div>
         <h3>结果单元 = 单题答案</h3>
         <p>完整问卷只是容器。知识库、候选列表、匹配日志默认不是结果单元。</p>
-        <div class="code">历史问答<br><span class="op">──[相似匹配 / 主体年份调整]──▶</span><br>当前单题答案</div>
+        <div class="scenarios-v2-flow">
+          <div class="scenarios-v2-stage-label"><b>01</b><span>输入</span></div>
+          <div class="source">历史问答</div>
+          <div class="scenarios-v2-stage-label"><b>02</b><span>处理动作</span></div>
+          <div class="relation">相似匹配 / 主体年份调整</div>
+          <div class="scenarios-v2-stage-label"><b>03</b><span>可审查的结果单元</span></div>
+          <div class="result">当前单题答案</div>
+        </div>
       </div>
-      <div class="scenario">
-        <div class="label">02 · 多文件填 Word</div>
+
+      <div class="scenarios-v2-item">
+        <div class="scenarios-v2-head"><span>02 · 多文件填 Word</span><strong>DOCUMENT</strong></div>
         <h3>结果单元 = 字段 / 内容块</h3>
         <p>完整 Word 不评级。多文件共同形成时，溯源链关联全部实际来源。</p>
-        <div class="code">源合同日期<br><span class="op">──[提取 + 格式标准化]──▶</span><br>模板「合同结束日期」</div>
+        <div class="scenarios-v2-flow">
+          <div class="scenarios-v2-stage-label"><b>01</b><span>输入</span></div>
+          <div class="source">源合同日期</div>
+          <div class="scenarios-v2-stage-label"><b>02</b><span>处理动作</span></div>
+          <div class="relation">提取 + 格式标准化</div>
+          <div class="scenarios-v2-stage-label"><b>03</b><span>可审查的结果单元</span></div>
+          <div class="result">模板「合同结束日期」</div>
+        </div>
       </div>
-      <div class="scenario">
-        <div class="label">03 · 数据汇总</div>
+
+      <div class="scenarios-v2-item">
+        <div class="scenarios-v2-head"><span>03 · 数据汇总</span><strong>METRIC</strong></div>
         <h3>结果单元 = 业务指标</h3>
         <p>标准化明细若非独立交付，进入溯源，不单独评级。</p>
-        <div class="code">订单明细 + 退款记录 + 已确认计算口径<br><span class="op">──[汇总计算]──▶</span><br>月度净销售额</div>
+        <div class="scenarios-v2-flow">
+          <div class="scenarios-v2-stage-label"><b>01</b><span>输入</span></div>
+          <div class="source">订单明细 + 退款记录 + 已确认计算口径</div>
+          <div class="scenarios-v2-stage-label"><b>02</b><span>处理动作</span></div>
+          <div class="relation">汇总计算</div>
+          <div class="scenarios-v2-stage-label"><b>03</b><span>可审查的结果单元</span></div>
+          <div class="result">月度净销售额</div>
+        </div>
       </div>
     </div>
-    <div class="callout"><strong>共同模式：</strong>业务输出 → 用户确认单位 → 结果单元 → 实际来源与形成关系 → 业务条件定义高中低 → 中低给出可执行检查动作。</div>
-    <div class="deck-footer"><span>场景不同，对象粒度不同 · 方法不变</span><span class="slide-number" data-current="10" data-total="13"></span></div>
+
+    <div class="scenarios-v2-common">
+      <h3>共同模式</h3>
+      <p><strong>业务输出</strong> → 用户确认单位 → 结果单元 → 实际来源与形成关系 → 业务条件定义高中低 → 中低给出可执行检查动作。</p>
+    </div>
+    <div class="deck-footer"><span>场景不同，对象粒度不同 · 方法不变</span><span class="slide-number" data-current="10" data-total="12"></span></div>
   </section>
 
   <!-- 11 Check -->
@@ -2005,14 +2601,14 @@ body, .h1, .h2, h1, h2, .eyebrow, .kicker { letter-spacing: 0; }
       <div class="level-card low" style="min-height:140px"><div class="head"><span class="badge low">低</span><strong>修正阻断</strong></div><div class="action">确认错误或风险 → 修正结果 / 更换来源 → 或阻断下游使用</div></div>
       <div class="level-card high" style="min-height:140px"><div class="head"><span class="badge high">高</span><strong>可直接用</strong></div><div class="action">默认不因置信度专门检查；关键项可按制度抽查或强制复核</div></div>
     </div>
-    <div class="deck-footer"><span>运行时至少回答：哪个结果 · 什么等级 · 为何审 · 查什么 · 如何溯源</span><span class="slide-number" data-current="11" data-total="13"></span></div>
+    <div class="deck-footer"><span>运行时至少回答：哪个结果 · 什么等级 · 为何审 · 查什么 · 如何溯源</span><span class="slide-number" data-current="11" data-total="12"></span></div>
   </section>
 
   <!-- 12 Feedback -->
   <section class="slide report-slide tight" data-title="反馈管理">
     <div class="deck-header"><span>10 · Feedback Loop</span><span>测试问题与用户反馈</span></div>
     <p class="kicker">Feedback Governance</p>
-    <h2 class="h2">真实问题驱动规则演进，用户确认后才生效</h2>
+    <h2 class="h2">真实问题驱动规则演进</h2>
     <p class="lede" style="font-size:18px;max-width:none;margin:0">开发测试、用户自测和验收反馈可以完善置信度定义；但不猜测问题，也不让未确认建议直接改变当前规则。</p>
 
     <div class="flow anim-stagger-list" data-anim-target>
@@ -2038,33 +2634,7 @@ body, .h1, .h2, h1, h2, .eyebrow, .kicker { letter-spacing: 0; }
         </ul>
       </div>
     </div>
-    <div class="deck-footer"><span>真实记录 · 建议与生效定义分离 · 用户确认后才更新</span><span class="slide-number" data-current="12" data-total="13"></span></div>
-  </section>
-
-  <!-- 13 Anti -->
-  <section class="slide report-slide tight" data-title="反模式">
-    <div class="deck-header"><span>11 · Anti-Patterns</span><span>不推荐做法</span></div>
-    <p class="kicker">Anti-Patterns</p>
-    <h2 class="h2">这些做法会让置信度失去业务意义</h2>
-    <div class="grid g2 mt-m">
-      <ul class="check-list">
-        <li class="no"><span class="mark">×</span><span>把输入、来源、候选、中间数据、处理步骤当作结果单元</span></li>
-        <li class="no"><span class="mark">×</span><span>因为“可以检查”就单独评级</span></li>
-        <li class="no"><span class="mark">×</span><span>给溯源链每个节点定义高中低</span></li>
-        <li class="no"><span class="mark">×</span><span>要求用户逐个检查溯源链所有节点</span></li>
-        <li class="no"><span class="mark">×</span><span>把模型思维过程或自评当作证据 / 等级</span></li>
-        <li class="no"><span class="mark">×</span><span>把「模型生成」与高中低并列</span></li>
-      </ul>
-      <ul class="check-list">
-        <li class="no"><span class="mark">×</span><span>用百分比分数覆盖不同业务结果</span></li>
-        <li class="no"><span class="mark">×</span><span>给整文件 / 整任务算总体置信度或机械平均</span></li>
-        <li class="no"><span class="mark">×</span><span>只写「需要人工检查」，不写位置与动作</span></li>
-        <li class="no"><span class="mark">×</span><span>把未核实或尚未生成的内容写成当前事实</span></li>
-        <li class="no"><span class="mark">×</span><span>猜测测试问题；未确认就改生效定义</span></li>
-        <li class="no"><span class="mark">×</span><span>为形式统一强制同一套运行状态 / 接口 / 框架</span></li>
-      </ul>
-    </div>
-    <div class="deck-footer"><span>一句话自检 · 评的是结果吗？条件是业务的吗？中低能定点查吗？</span><span class="slide-number" data-current="13" data-total="13"></span></div>
+    <div class="deck-footer"><span>真实记录 · 建议与生效定义分离 · 用户确认后才更新</span><span class="slide-number" data-current="12" data-total="12"></span></div>
   </section>
 
 </div>
