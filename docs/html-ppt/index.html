@@ -100,6 +100,171 @@ body, .h1, .h2, h1, h2, .eyebrow, .kicker { letter-spacing: 0; }
   box-shadow: 0 0 0 3px rgba(201, 36, 43, 0.12);
 }
 
+.cover-v2 {
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  gap: 54px;
+  align-items: center;
+  min-height: calc(100vh - 128px);
+}
+.cover-v2-copy { padding-bottom: 12px; }
+.cover-v2-title {
+  margin: 22px 0 0;
+  padding-bottom: 8px;
+  font-size: 70px;
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -.04em;
+  color: var(--text-1);
+}
+.cover-v2-claim {
+  margin-top: 28px;
+  padding-left: 20px;
+  border-left: 4px solid var(--accent-2);
+  color: var(--text-1);
+  font-size: 29px;
+  font-weight: 750;
+  line-height: 1.38;
+}
+.cover-v2-desc {
+  max-width: 760px;
+  margin: 22px 0 0;
+  color: var(--text-2);
+  font-size: 18px;
+  line-height: 1.6;
+}
+.cover-v2-boundaries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+.cover-v2-boundaries span {
+  padding: 8px 13px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255,255,255,.7);
+  color: var(--text-2);
+  font-size: 13px;
+  font-weight: 650;
+}
+.cover-v2-map {
+  padding: 26px 28px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(255,255,255,.9);
+  box-shadow: var(--shadow-lg);
+}
+.cover-v2-map-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.cover-v2-map-head span {
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.cover-v2-map-head strong {
+  color: var(--text-1);
+  font-size: 20px;
+}
+.cover-v2-output,
+.cover-v2-gate {
+  padding: 15px 18px;
+  border-radius: 11px;
+  text-align: center;
+}
+.cover-v2-output {
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--accent) 5%, #fff);
+}
+.cover-v2-output strong,
+.cover-v2-gate strong {
+  display: block;
+  font-size: 19px;
+  line-height: 1.3;
+}
+.cover-v2-output span,
+.cover-v2-gate span {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.cover-v2-output span { color: var(--text-2); }
+.cover-v2-arrow {
+  height: 36px;
+  display: grid;
+  place-items: center;
+  color: var(--accent-2);
+  font-size: 22px;
+  font-weight: 800;
+}
+.cover-v2-gate {
+  background: linear-gradient(145deg, #272562, #403e82);
+  color: #fff;
+  box-shadow: 0 12px 24px rgba(39,37,98,.18);
+}
+.cover-v2-gate span { color: rgba(255,255,255,.7); }
+.cover-v2-routes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 16px;
+}
+.cover-v2-route {
+  min-height: 108px;
+  padding: 14px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.cover-v2-route.high { border-color: var(--high-border); background: var(--high-bg); }
+.cover-v2-route.mid { border-color: var(--mid-border); background: var(--mid-bg); }
+.cover-v2-route.low { border-color: var(--low-border); background: var(--low-bg); }
+.cover-v2-route .level {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 800;
+}
+.cover-v2-route.high .level { color: var(--high); }
+.cover-v2-route.mid .level { color: var(--mid); }
+.cover-v2-route.low .level { color: var(--low); }
+.cover-v2-route strong {
+  display: block;
+  color: var(--text-1);
+  font-size: 15px;
+  line-height: 1.3;
+}
+.cover-v2-route span:last-child {
+  display: block;
+  margin-top: 4px;
+  color: var(--text-2);
+  font-size: 12px;
+  line-height: 1.35;
+}
+.cover-v2-payoff {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-top: 1px dashed var(--border-strong);
+  color: var(--accent);
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-align: center;
+}
+
 .cover-grid {
   display: grid;
   grid-template-columns: 1.15fr .85fr;
@@ -718,7 +883,7 @@ body, .h1, .h2, h1, h2, .eyebrow, .kicker { letter-spacing: 0; }
 .why-list,
 .why-routes {
   display: grid;
-  gap: 9px;
+  gap: 7px;
 }
 .why-item,
 .why-route {
@@ -726,7 +891,7 @@ body, .h1, .h2, h1, h2, .eyebrow, .kicker { letter-spacing: 0; }
   grid-template-columns: 32px 1fr;
   gap: 10px;
   align-items: start;
-  padding: 10px 11px;
+  padding: 8px 10px;
   border: 1px solid var(--border);
   border-radius: 10px;
   background: #fff;
@@ -777,6 +942,196 @@ body, .h1, .h2, h1, h2, .eyebrow, .kicker { letter-spacing: 0; }
   line-height: 1.45;
 }
 .why-bottom strong { color: var(--text-1); }
+
+/* Slide 03, rebuilt independently: pain -> missing layer -> business change */
+.confidence-why-lede {
+  max-width: none;
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.confidence-why-flow {
+  display: grid;
+  grid-template-columns: 1fr 210px 1fr;
+  gap: 18px;
+  align-items: stretch;
+  margin-top: 20px;
+}
+.confidence-why-side {
+  min-height: 306px;
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255,255,255,.9);
+  box-shadow: var(--shadow);
+}
+.confidence-why-side.before { border-top: 3px solid var(--low); }
+.confidence-why-side.after { border-top: 3px solid var(--high); }
+.confidence-why-side-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.confidence-why-side-head span {
+  font-family: var(--font-mono);
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.confidence-why-side-head strong {
+  color: var(--text-1);
+  font-size: 21px;
+}
+.confidence-why-list { display: grid; gap: 9px; }
+.confidence-why-item {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 11px;
+  align-items: start;
+  min-height: 70px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+}
+.confidence-why-item .mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 800;
+}
+.before .confidence-why-item .mark {
+  color: var(--low);
+  background: var(--low-bg);
+  border: 1px solid var(--low-border);
+}
+.after .confidence-why-item .mark {
+  color: var(--high);
+  background: var(--high-bg);
+  border: 1px solid var(--high-border);
+}
+.confidence-why-item strong {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--text-1);
+  font-size: 15px;
+  line-height: 1.3;
+}
+.confidence-why-item p {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 13px;
+  line-height: 1.38;
+}
+.confidence-why-bridge {
+  position: relative;
+  min-height: 306px;
+  padding: 22px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 14px;
+  background: linear-gradient(155deg, #272562 0%, #35347a 72%, #4a497f 100%);
+  color: #fff;
+  box-shadow: 0 16px 34px rgba(39,37,98,.2);
+}
+.confidence-why-bridge::before,
+.confidence-why-bridge::after {
+  content: "\2192";
+  position: absolute;
+  top: 50%;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: var(--bg-color-main);
+  color: var(--accent-2);
+  font-size: 20px;
+  font-weight: 800;
+  box-shadow: 0 3px 10px rgba(39,37,98,.1);
+}
+.confidence-why-bridge::before { left: -27px; }
+.confidence-why-bridge::after { right: -27px; }
+.confidence-why-bridge .eyebrow {
+  margin-bottom: 10px;
+  color: rgba(255,255,255,.65);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+.confidence-why-bridge h3 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 25px;
+  line-height: 1.25;
+}
+.confidence-why-bridge p {
+  margin: 0;
+  color: rgba(255,255,255,.76);
+  font-size: 13px;
+  line-height: 1.45;
+}
+.confidence-why-paths {
+  display: grid;
+  gap: 7px;
+  width: 100%;
+  margin-top: 16px;
+}
+.confidence-why-paths span {
+  padding: 7px 8px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 8px;
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+.confidence-why-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 14px;
+}
+.confidence-why-value {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--accent) 5%, #fff);
+}
+.confidence-why-value strong { color: var(--accent); font-size: 16px; }
+.confidence-why-value span {
+  color: var(--text-2);
+  font-size: 13px;
+  line-height: 1.35;
+}
+.confidence-why-conclusion {
+  margin-top: 12px;
+  padding: 11px 16px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  background: color-mix(in srgb, var(--accent) 6%, #fff);
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.confidence-why-conclusion strong { color: var(--text-1); }
 .chain-box {
   font-family: var(--font-mono);
   font-size: 15px;
@@ -823,36 +1178,42 @@ body, .h1, .h2, h1, h2, .eyebrow, .kicker { letter-spacing: 0; }
 
   <!-- 01 Cover -->
   <section class="slide report-slide" data-title="封面">
-    <div class="deck-header"><span>Agent Confidence</span><span>Internal Briefing</span></div>
-    <div class="cover-grid">
-      <div class="stack" style="justify-content:center;display:flex;flex-direction:column">
-        <span class="report-mark">Best Practices</span>
-        <h1 class="h1 anim-fade-up" data-anim="fade-up" style="font-size:64px;margin-top:18px">Agent 业务结果<br><span class="gradient-text">置信度设计实践</span></h1>
-        <p class="lede" style="max-width:720px;margin-top:18px">不评模型自信，不评文件总分。只对用户可独立验收的业务结果定义高 / 中 / 低，并用结果溯源链支撑定点审查。</p>
-        <div class="stat-strip mt-l anim-stagger-list" data-anim-target>
-          <div class="metric-card"><p class="eyebrow">目标</p><div class="value" style="font-size:26px">少审·审准</div><p class="caption">减少审查工作量</p></div>
-          <div class="metric-card"><p class="eyebrow">对象</p><div class="value" style="font-size:26px">结果单元</div><p class="caption">可独立验收对象</p></div>
-          <div class="metric-card"><p class="eyebrow">等级</p><div class="value" style="font-size:26px">高/中/低</div><p class="caption">业务条件定义</p></div>
-          <div class="metric-card"><p class="eyebrow">依据</p><div class="value" style="font-size:26px">可追溯</div><p class="caption">结果溯源链</p></div>
+    <div class="deck-header"><span>Agent Confidence</span><span>Best Practices</span></div>
+    <div class="cover-v2">
+      <div class="cover-v2-copy">
+        <span class="report-mark">Agent Confidence · Best Practices</span>
+        <h1 class="cover-v2-title anim-fade-up" data-anim="fade-up">Agent 业务结果<br><span class="gradient-text">置信度</span></h1>
+        <div class="cover-v2-claim">从“整份输出全面复核”<br>转向“只审真正需要审查的结果”</div>
+        <p class="cover-v2-desc">一套面向 Agent + Skill 业务输出的结果级分流方法：减少全面复核，缩短验证路径，并在错误进入下游前加以控制。</p>
+        <div class="cover-v2-boundaries">
+          <span>不评模型主观自信</span><span>不给整份文件打总分</span><span>只评用户可独立验收的业务结果</span>
         </div>
       </div>
-      <div class="cover-side anim-fade-left" data-anim="fade-left">
-        <div class="cover-item"><div class="n">01 · RESULT UNIT</div><strong>结果单元</strong><span>可独立接受、退回或修正的最小业务对象</span></div>
-        <div class="cover-item"><div class="n">02 · PROVENANCE</div><strong>结果溯源链</strong><span>结果位置 · 实际来源 · 形成关系（不评级）</span></div>
-        <div class="cover-item"><div class="n">03 · LEVELS</div><strong>高 / 中 / 低</strong><span>由业务验收条件定义，驱动审查动作</span></div>
+
+      <div class="cover-v2-map anim-fade-left" data-anim="fade-left">
+        <div class="cover-v2-map-head"><span>From output to action</span><strong>从业务结果到用户动作</strong></div>
+        <div class="cover-v2-output"><strong>Agent + Skill 业务结果</strong><span>问卷答案 · 文档字段 · 数据指标 · 判断与建议</span></div>
+        <div class="cover-v2-arrow">↓</div>
+        <div class="cover-v2-gate"><strong>结果级置信度</strong><span>业务验收条件 + 可定位的结果溯源</span></div>
+        <div class="cover-v2-routes">
+          <div class="cover-v2-route high"><span class="level">高</span><strong>直接使用</strong><span>满足业务使用条件</span></div>
+          <div class="cover-v2-route mid"><span class="level">中</span><strong>定点核查</strong><span>只查已定位结果与依据</span></div>
+          <div class="cover-v2-route low"><span class="level">低</span><strong>确认 / 阻断</strong><span>修正错误或阻断风险</span></div>
+        </div>
+        <div class="cover-v2-payoff">少审 · 审准 · 控风险</div>
       </div>
     </div>
-    <div class="deck-footer"><span>业务结果置信度 · 方法论</span><span class="slide-number" data-current="1" data-total="15"></span></div>
-    <div class="notes">封面。强调：评结果不评模型，用溯源支撑定点审查。</div>
+    <div class="deck-footer"><span>让 Agent 结果可分流使用、可定点验证、可前置控险</span><span class="slide-number" data-current="1" data-total="15"></span></div>
+    <div class="notes">封面。核心主张：从整份输出全面复核，转向只审真正需要审查的结果。</div>
   </section>
 
   <!-- 02 Agenda -->
   <section class="slide report-slide tight" data-title="目录">
     <div class="deck-header"><span>Agenda</span><span>目录</span></div>
     <p class="kicker">Agenda</p>
-    <h2 class="h2">今天讲清楚什么</h2>
+    <h2 class="h2">目录</h2>
     <div class="agenda-list anim-stagger-list" data-anim-target>
-      <div class="agenda-item"><div class="num">01</div><div><strong>为什么做</strong><span>减少审查，集中审查</span></div></div>
+      <div class="agenda-item"><div class="num">01</div><div><strong>为什么做</strong><span>痛点 · 需要 · 解决什么</span></div></div>
       <div class="agenda-item"><div class="num">02</div><div><strong>评什么 / 不评什么</strong><span>边界比方法更重要</span></div></div>
       <div class="agenda-item"><div class="num">03</div><div><strong>落地路径</strong><span>四动作 · 嵌入现有环节</span></div></div>
       <div class="agenda-item"><div class="num">04</div><div><strong>结果单元</strong><span>拆到用户能独立验收</span></div></div>
@@ -867,48 +1228,44 @@ body, .h1, .h2, h1, h2, .eyebrow, .kicker { letter-spacing: 0; }
   <!-- 03 Why -->
   <section class="slide report-slide tight" data-title="为什么做">
     <div class="deck-header"><span>01 · Why</span><span>为什么做</span></div>
-    <p class="kicker">Opening · 本次分享开场</p>
-    <h2 class="h2">为什么需要业务结果置信度？</h2>
-    <p class="lede why-lede">Agent 解决了「写得快」，还没解决「信得过、查得起」。置信度要回答：哪些结果能用、哪些必须查、查哪里。</p>
+    <p class="kicker">Why</p>
+    <h2 class="h2">Agent 的瓶颈，正在从“生成”转向“验收”</h2>
+    <p class="lede confidence-why-lede">没有结果置信度，业务只能在“全部相信”和“全部复核”之间二选一：前者风险不可控，后者抵消自动化收益。</p>
 
-    <div class="why-grid anim-stagger-list" data-anim-target>
-      <div class="why-stage problem">
-        <div class="stage-label">01 · 当前痛点</div>
-        <h3>产得出，审不起；信不过，又查不全</h3>
-        <div class="why-list">
-          <div class="why-item"><span class="icon">1</span><div><strong>产出多、审查贵</strong><span>问卷、字段、指标批量生成，全量人工审成本高。</span></div></div>
-          <div class="why-item"><span class="icon">2</span><div><strong>没有分级，不知从哪审</strong><span>结果看起来都一样「是 AI 写的」，只能全信或全审。</span></div></div>
-          <div class="why-item"><span class="icon">3</span><div><strong>审了也难对上依据</strong><span>缺结果溯源：不知道来自哪一格、哪一页、哪条口径。</span></div></div>
-          <div class="why-item"><span class="icon">4</span><div><strong>总分与模型自信无用</strong><span>整份文件一个分、或模型「我觉得对」，不能指导业务验收。</span></div></div>
+    <div class="confidence-why-flow anim-fade-up" data-anim="fade-up">
+      <div class="confidence-why-side before">
+        <div class="confidence-why-side-head"><span>Without confidence</span><strong>当前痛点</strong></div>
+        <div class="confidence-why-list">
+          <div class="confidence-why-item"><span class="mark">01</span><div><strong>不知道哪些结果可以信</strong><p>结果可靠程度混合，表达流畅也可能事实错误。</p></div></div>
+          <div class="confidence-why-item"><span class="mark">02</span><div><strong>人工审查只能全量兜底</strong><p>用户逐项翻输入、查来源、理解过程，验收成为新瓶颈。</p></div></div>
+          <div class="confidence-why-item"><span class="mark">03</span><div><strong>“请人工检查”没有解决问题</strong><p>不说明查哪个结果、对照什么、确认后如何处理。</p></div></div>
         </div>
-        <div class="why-gap">两极都不成立：全信 → 风险失控；全审 → 自动化价值被吃掉。</div>
       </div>
 
-      <div class="why-stage mechanism">
-        <div class="stage-label">02 · 为什么需要</div>
-        <h3>业务要对结果负责，必须有中间态</h3>
-        <div class="why-list">
-          <div class="why-item"><span class="icon">A</span><div><strong>用户仍要为结果担责</strong><span>Agent 能产，审批、决策、对外交付仍落在业务侧。</span></div></div>
-          <div class="why-item"><span class="icon">B</span><div><strong>可靠程度本来就不均匀</strong><span>有的结果来源清楚、口径一致；有的边界模糊或已冲突。</span></div></div>
-          <div class="why-item"><span class="icon">C</span><div><strong>需要可执行的审查策略</strong><span>不是「再人工看一遍」，而是：用 / 定点查 / 拦，分得开、落得下。</span></div></div>
-        </div>
-        <div class="why-gap" style="background:color-mix(in srgb,var(--accent) 8%,#fff);color:var(--accent)">评的是业务结果，不是模型心情；要的是少审、审准，不是证明 Agent 永远正确。</div>
+      <div class="confidence-why-bridge">
+        <div class="eyebrow">The missing layer</div>
+        <h3>结果级<br>置信度</h3>
+        <p>不是给模型打分，而是给业务结果定使用与审查策略。</p>
+        <div class="confidence-why-paths"><span>可以用</span><span>需要查</span><span>必须停</span></div>
       </div>
 
-      <div class="why-stage outcome">
-        <div class="stage-label">03 · 解决什么</div>
-        <h3>结果级高中低 + 可定点溯源</h3>
-        <div class="why-routes">
-          <div class="why-route high"><span class="icon">高</span><div><strong>哪些可默认使用</strong><span>满足业务条件 → 直接用，或按制度少量抽查。</span></div></div>
-          <div class="why-route mid"><span class="icon">中</span><div><strong>哪些只需定点查</strong><span>未确认有错，但有明确不确定点 → 只查该结果 + 已定位来源。</span></div></div>
-          <div class="why-route low"><span class="icon">低</span><div><strong>哪些必须拦住</strong><span>已发现错误或重大风险 → 确认、修正，或阻断后续使用。</span></div></div>
+      <div class="confidence-why-side after">
+        <div class="confidence-why-side-head"><span>With confidence</span><strong>解决的问题</strong></div>
+        <div class="confidence-why-list">
+          <div class="confidence-why-item"><span class="mark">01</span><div><strong>每个结果都有明确使用路径</strong><p>区分直接使用、定点核查与确认阻断，不再一刀切。</p></div></div>
+          <div class="confidence-why-item"><span class="mark">02</span><div><strong>人工只介入真正需要审查的地方</strong><p>收缩审查范围，把验收时间用在不确定和高风险结果上。</p></div></div>
+          <div class="confidence-why-item"><span class="mark">03</span><div><strong>审查对象、证据和动作都可定位</strong><p>用户知道查什么、去哪里验证，并在错误进入下游前处理。</p></div></div>
         </div>
-        <div class="why-gap" style="background:color-mix(in srgb,var(--high) 10%,#fff);color:var(--high);margin-top:10px">配套：每个结果可追溯；中低写清查什么、怎么处理；规则嵌进现有环节，不另建平台。</div>
       </div>
     </div>
 
-    <div class="why-bottom"><strong>开场一句话：</strong>把审查成本，从「整份输出全量兜底」，压到「真正需要审查的那几个结果」上——这就是本次分享的出发点。</div>
-    <div class="deck-footer"><span>痛点 → 为什么需要 → 解决什么 · 后文展开方法</span><span class="slide-number" data-current="3" data-total="15"></span></div>
+    <div class="confidence-why-values">
+      <div class="confidence-why-value"><strong>少审</strong><span>不再按最坏情况复核全部结果</span></div>
+      <div class="confidence-why-value"><strong>审准</strong><span>审查聚焦已定位的结果、来源和不确定点</span></div>
+      <div class="confidence-why-value"><strong>控风险</strong><span>为自动流转和人工介入建立明确边界</span></div>
+    </div>
+    <div class="confidence-why-conclusion"><strong>核心价值：</strong>置信度不是证明 Agent 永远正确，而是让业务在结果可靠程度混合的现实下，仍然能够安全、高效地使用 Agent。</div>
+    <div class="deck-footer"><span>生成只是起点 · 低成本验收才能真正进入业务</span><span class="slide-number" data-current="3" data-total="15"></span></div>
   </section>
 
   <!-- 04 Scope -->
